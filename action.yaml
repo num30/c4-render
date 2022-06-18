@@ -45,7 +45,7 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: ${{ inputs.github-repo }}
-        path: ${{ input.target-clone-dir }}
+        path: ${{ inputs.target-clone-dir }}
         ref:  ${{ inputs.github-branch }}
         token: ${{ inputs.github-token }}
         
@@ -53,7 +53,7 @@ runs:
     - name: Render Diagrams
       env: 
         FILE_NAME: ${{ inputs.filename }}
-        TARGET_PATH: ${{ input.target-clone-dir }}/${{ inputs.path }}
+        TARGET_PATH: ${{ inputs.target-clone-dir }}/${{ inputs.path }}
       run: ${{ github.action_path }}/run.sh
       shell: bash       
 
@@ -64,7 +64,7 @@ runs:
         GITHUB_USERNAME: ${{ inputs.github-username }}
         GITHUB_USER_EMAIL: ${{ inputs.github-user-mail }}
       run: |
-            cd  ${{ input.target-clone-dir }}
+            cd  ${{ inputs.target-clone-dir }}
             git add .
             git commit -m"Diagram files [ci skip]"
             git push
