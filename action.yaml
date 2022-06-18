@@ -28,18 +28,18 @@ inputs:
   github-username:  
     description: "Username of a user that will make a commit`"
     default: C4RenderBot
-    default: 'Gitops Release User'
+
 
   github-user-mail:  
-    description: "Email of a user that will make a commit`"
-    required: false
+    description: "Email of a user that will make a commit`"    
     default: 'github-bot@${{ github.repository_owner }}.com'
+
+  target-clone-dir:
+    default: ./target-repo-clone
     
 
 runs:
   using: "composite"
-  env: 
-      target-dir:  './target-repo-clone'
   steps:    
     - name: Checkout
       uses: actions/checkout@v3
