@@ -1,19 +1,21 @@
 #!/bin/bash
 
-#docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f plantuml -w ukama.dsl -o rendered
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f $TARGET_PATH -w $FILE_NAME -o mermaid
+mkdir -p $TARGET_PATH
+docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid
 
 cd $TARGET_PATH
+
 rm -rf md
 mkdir  md
 
-INDX=DIAGRAMS.md
+INDX=README.md
 rm $INDX
 
 echo "# Ukama C4 Diagrams" >> $INDX
 echo "" >> $INDX
 
-for file in ./*.mmd; do
+
+for file in ./mermaid/*.mmd; do
     file_only=${file##*/}
     name=${file_only%.mmd}
     name=${name#structurizr-}
@@ -27,3 +29,5 @@ for file in ./*.mmd; do
     # add entry to index 
     echo "- [$name](md/$name.md)" >> $INDX
 done
+
+sudo rm -rf mermaid
