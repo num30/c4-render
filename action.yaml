@@ -64,7 +64,11 @@ runs:
         GITHUB_USERNAME: ${{ inputs.github-username }}
         GITHUB_USER_EMAIL: ${{ inputs.github-user-mail }}
       run: |
+            
+            set -e
             cd  ${{ inputs.target-clone-dir }}
+            git config --global user.email  $GITHUB_USERNAME
+            git config --global user.name $GITHUB_USER_EMAIL            
             git add .
             git commit -m"Diagram files [ci skip]"
             git push
