@@ -12,18 +12,18 @@ echo "Current dir: " $(pwd)
 echo "Current files:"
 ls
 echo List of mermaid files:
-ls ./mermaid 
-for file in ./mermaid/*.mmd; do
+ls $PWD/mermaid 
+for file in $PWD/mermaid/*.mmd; do
     file_only=${file##*/}
     name=${file_only%.mmd}
     name=${name#structurizr-}
     echo "Processing $file"
     
-    echo  "# ${name}" >> ./md/${name}.md
-    echo  "\`\`\`mermaid" >> ./md/${name}.md
-    cat $file >> md/${name}.md
-    echo "" >> md/${name}.md
-    echo  "\`\`\`" >> ./md/${name}.md
+    echo  "# ${name}" >> $PWD/md/${name}.md
+    echo  "\`\`\`mermaid" >> $PWD/md/${name}.md
+    cat $file >> $PWD/md/${name}.md
+    echo "" >> $PWD/md/${name}.md
+    echo  "\`\`\`" >> $PWD/md/${name}.md
     
     # add entry to index 
     echo "- [$name](md/$name.md)" >> $INDX
