@@ -54,8 +54,16 @@ runs:
       env: 
         FILE_NAME: ${{ inputs.filename }}
         TARGET_PATH: ${{ github.workspace }}/${{ inputs.target-clone-dir }}/${{ inputs.path }}
-      run: ${{ github.action_path }}/run.sh
+      run: |
+            mkdir -p $TARGET_PATH/mermaid
+            docker run --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid      
       shell: bash
+
+    - name: Render Markdown
+      shell: bash
+      working_dir: ${{ github.workspace }}/${{ inputs.target-clone-dir }}/${{ inputs.path }}
+      run: ${{ github.action_path }}/run.sh
+
 
 
     - name: commit
