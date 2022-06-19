@@ -61,7 +61,7 @@ runs:
 
     - name: Render Markdown
       shell: bash
-      working_dir: ${{ github.workspace }}/${{ inputs.target-clone-dir }}/${{ inputs.path }}
+      working-directory: ${{ github.workspace }}/${{ inputs.target-clone-dir }}/${{ inputs.path }}
       run: ${{ github.action_path }}/run.sh
 
 
