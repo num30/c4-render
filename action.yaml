@@ -35,7 +35,7 @@ inputs:
     default: 'github-bot@${{ github.repository_owner }}.com'
 
   target-clone-dir:
-    default: ./target-repo-clone
+    default:  ${{ runner.temp }}/target-repo-clone
     
 
 runs:
@@ -55,7 +55,7 @@ runs:
         FILE_NAME: ${{ inputs.filename }}
         TARGET_PATH: ${{ inputs.target-clone-dir }}/${{ inputs.path }}
       run: ${{ github.action_path }}/run.sh
-      shell: bash       
+      shell: bash
 
 
     - name: commit
@@ -64,7 +64,6 @@ runs:
         GITHUB_USERNAME: ${{ inputs.github-username }}
         GITHUB_USER_EMAIL: ${{ inputs.github-user-mail }}
       run: |
-            
             set -e
             cd  ${{ inputs.target-clone-dir }}
             git config --global user.email  $GITHUB_USERNAME
