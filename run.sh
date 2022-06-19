@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f plantuml -w  $FILE_NAME -o rendered
-mkdir -p $TARGET_PATH
+mkdir -p $TARGET_PATH/mermaid
 docker run --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid
 
 cd $TARGET_PATH
@@ -15,6 +15,9 @@ rm $INDX
 echo "# Ukama C4 Diagrams" >> $INDX
 echo "" >> $INDX
 
+echo "Current dir: $pwd"
+echo "Current dirs:"
+ls
 echo List of mermaid files:
 ls mermaid 
 for file in mermaid/*.mmd; do
