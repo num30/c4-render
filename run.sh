@@ -2,7 +2,7 @@
 
 #docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f plantuml -w  $FILE_NAME -o rendered
 mkdir -p $TARGET_PATH
-docker run -it --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid
+docker run --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid
 
 cd $TARGET_PATH
 
