@@ -53,18 +53,19 @@ runs:
     - name: Render Diagrams
       env: 
         FILE_NAME: ${{ inputs.filename }}
-        TARGET_PATH: ${{ github.workspace }}/${{ inputs.target-clone-dir }}/${{ inputs.path }}
+        TARGET_PATH: ${{ inputs.target-clone-dir }}/${{ inputs.path }}
       run: |
             mkdir -p $TARGET_PATH/mermaid
-            docker run --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid      
+            docker run --rm -v $PWD:/usr/local/structurizr structurizr/cli export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid
+            echo "of mermaid files" 
+            ls $TARGET_PATH/mermaid
+            ${{ github.action_path }}/run.sh
       shell: bash
 
-    - name: Render Markdown
-      shell: bash
-      working-directory: ${{ github.workspace }}/${{ inputs.target-clone-dir }}/${{ inputs.path }}
-      run: ${{ github.action_path }}/run.sh
-
-
+    # - name: Render Markdown
+    #   shell: bash
+    #   working-directory: 
+    #   run: 
 
     - name: commit
       shell: bash

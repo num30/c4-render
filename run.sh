@@ -1,4 +1,6 @@
 #!/bin/bash
+cd $TARGET_PATH
+
 rm -rf ./md
 mkdir ./md
 
@@ -8,11 +10,12 @@ rm $INDX
 echo "# Ukama C4 Diagrams" >> $INDX
 echo "" >> $INDX
 
+
 echo "Current dir: " $(pwd)
 echo "Current files:"
 ls
 echo List of mermaid files:
-ls $PWD/mermaid 
+ls $PWD/mermaid
 for file in $PWD/mermaid/*.mmd; do
     file_only=${file##*/}
     name=${file_only%.mmd}
