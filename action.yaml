@@ -1,7 +1,7 @@
 name: 'C4(DSL) render to Github markdown'
 description: 'Render C4 diagram to Github markdown'
 branding:
-  icon: 'git-commit'  
+  icon: 'codesandbox'  
   color: 'orange'
 inputs:
   filename: 
