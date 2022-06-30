@@ -3,7 +3,7 @@ Github action to render markdown files from C4 diagrams written in DSL
 
 ## How to use 
 
-- Creat a [DSL](https://github.com/structurizr/dsl/blob/master/docs/cookbook/README.md) file 
+- Create a [DSL](https://github.com/structurizr/dsl/blob/master/docs/cookbook/README.md) file 
 - Add C4-render step.
 ```
       - name: Run a one-line script    
