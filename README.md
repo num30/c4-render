@@ -13,7 +13,7 @@ Github action to render markdown files from C4 diagrams written in DSL
           filename: diagram.dsl
 ```
 
-Refer to this example: https://denispalnitsky.github.io/c4-rendering-sample/
+Refer to this example: https://github.com/DenisPalnitsky/c4-rendering-sample/blob/main/README.md
 
 
 ### Parameters
