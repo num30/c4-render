@@ -4,17 +4,16 @@ Github action to render markdown files from C4 diagrams written in DSL
 ## How to use 
 
 - Create a [DSL](https://github.com/structurizr/dsl/blob/master/docs/cookbook/README.md) file 
-- Add C4-render step.
+- Add C4-render step to github workflow
 ```
       - name: Run a one-line script    
         uses: num30/c4-render@1e3595a78a67ee5a2d7889aa3970bcfbea7b7dec
         with:
-          path: diagrams
+          path: diagrams #target path in the repository
           filename: diagram.dsl
 ```
 
 Refer to this example: https://denispalnitsky.github.io/c4-rendering-sample/
-
 
 
 ### Parameters
