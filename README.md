@@ -1,5 +1,5 @@
 # c4-render
-Github action to render mermaid based documentation from C4 diagrams written DSL 
+Github action to render markdown files from C4 diagrams written in DSL 
 
 ## How to use 
 
