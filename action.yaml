@@ -58,7 +58,7 @@ runs:
       env: 
         FILE_NAME: ${{ inputs.filename }}
         TARGET_PATH: ${{ inputs.target-clone-dir }}/${{ inputs.path }}
-        TAG: ${{ inputs.structurizrImageTag }}
+        TAG: ${{ inputs.structurizr-image-tag }}
       run: |
             mkdir -p $TARGET_PATH/mermaid
             docker run --rm -v $PWD:/usr/local/structurizr structurizr/cli:$TAG export -f mermaid -w $FILE_NAME -o $TARGET_PATH/mermaid
