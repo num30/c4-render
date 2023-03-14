@@ -37,7 +37,7 @@ inputs:
   target-clone-dir:
     default:  target-repo-clone
     
-  structurizrImageTag:
+  structurizr-image-tag:
     description: Specific image tag of `structurizr/cli` docker image
     default:  latest
     
