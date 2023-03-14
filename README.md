@@ -43,8 +43,11 @@ Refer to this example: https://github.com/DenisPalnitsky/c4-rendering-sample/blo
     description: "Username of a user that will make a commit`"
     default: C4RenderBot
 
-
   github-user-mail:  
     description: "Email of a user that will make a commit`"    
     default: 'github-bot@${{ github.repository_owner }}.com'
+  
+  structurizr-image-tag:
+    description: Specific image tag of `structurizr/cli` docker image
+    default:  latest
 ```
