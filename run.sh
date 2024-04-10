@@ -7,7 +7,7 @@ mkdir ./md
 INDX=README.md
 rm $INDX
 
-echo "# Ukama C4 Diagrams" >> $INDX
+echo "# C4 Diagrams" >> $INDX
 echo "" >> $INDX
 
 
